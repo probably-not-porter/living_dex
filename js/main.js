@@ -34,6 +34,7 @@ box_names = [
     "Empty (Box 32)"
 ]
 box_current = 0;
+var dex_progress = [];
 
 function populate_living_dex(){
     count = 0;
@@ -114,6 +115,7 @@ function box_right(){
 
 window.addEventListener('load', (event) => {
     console.log('page is fully loaded');
+    read();
     populate_living_dex();
     render_box(box_current);
 });

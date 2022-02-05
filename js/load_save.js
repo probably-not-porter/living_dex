@@ -1,15 +1,9 @@
-var dex_progress;
-window.addEventListener('load', (event) => {
-    // load local storage
-    dex_progress = JSON.parse(localStorage.getItem("dex_progress"));
-    if (dex_progress == null){
-        dex_progress = [];
-        localStorage.setItem("dex_progress", JSON.stringify(dex_progress));
-    }
-    console.log(dex_progress);
-    console.log("loaded save state"); 
-});
-
+function read(){
+    console.log("READ");
+    dex_progress = JSON.parse(localStorage.getItem("dex_progress")) || [];
+    console.log("save state: " + dex_progress)
+}
+    
 function write(){
     localStorage.setItem("dex_progress", JSON.stringify(dex_progress));
 }
