@@ -56,6 +56,7 @@ function render_box(n){
     let navs = document.getElementsByClassName("box-nav");
     for (x = 0;x < navs.length; x++){
         navs[x].classList.remove('active');
+        navs[x].innerHTML = box_names[x];
     }
     navs[n].classList.add('active');
     document.getElementById("box-title").innerHTML = box_names[n];
@@ -68,7 +69,14 @@ function render_box(n){
             spaces[x].style.backgroundImage = "url('img/regular/" + img + "')";
             spaces[x].innerHTML = "<div class='bg'></div>"
             spaces[x].innerHTML += "<span class='entry-name'>" + name + "</span>"
-            spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"   
+            spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"  
+            spaces[x].setAttribute("onclick", "toggle_pkmn(" + (x+1 + box_current*30) + ")"); 
+            if (dex_progress.includes((x+1 + box_current*30))){
+                spaces[x].classList.add('check');
+            }else{
+                spaces[x].classList.remove('check');
+            }
+            
         }
         else{
             spaces[x].innerHTML = "<div class='bg'></div>"
@@ -77,6 +85,19 @@ function render_box(n){
         }
     }
        
+}
+function toggle_pkmn(n){
+    console.log(dex_progress);
+    if (dex_progress.includes(n)){
+        dex_progress = dex_progress.filter(function(item) {
+            return item !== n
+        })
+    }else{
+        dex_progress.push(n);
+    }
+    console.log(dex_progress);
+    write();
+    render_box(box_current);
 }
 
 function box_left(){

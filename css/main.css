@@ -8,9 +8,16 @@ body{
     position:relative;
     max-width: 16vh;
     opacity: 0.5;
+    cursor: pointer;
+}
+.check{
+    opacity: 1;
+}
+.check .bg{
+    background-color: rgb(146, 146, 146);
 }
 .bg{
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: rgba(212, 24, 24, 0.2);
     position:absolute;
     z-index: -1;
     width: 80%;
@@ -19,8 +26,12 @@ body{
     border-radius: 10px;
 }
 .bg:hover{
-    background-color: rgba(128, 128, 128, 0.8);
+    background-color: rgba(212, 24, 24, .5);
 }
+.check:hover .bg{
+    background-color: rgb(116, 116, 116);
+}
+
 .entry .entry-name{
     float: left;
     position:absolute;
