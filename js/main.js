@@ -53,16 +53,27 @@ function populate_living_dex(){
 function render_box(n){
     let data = boxes[n];
     let spaces = document.getElementsByClassName("entry");
+    let navs = document.getElementsByClassName("box-nav");
+    for (x = 0;x < navs.length; x++){
+        navs[x].classList.remove('active');
+    }
+    navs[n].classList.add('active');
     document.getElementById("box-title").innerHTML = box_names[n];
     for (x = 0; x < 30; x++){
         if (x < data.length){
             let name = dex[data[x]];
             let img = name.toLowerCase().replace("'",'') + ".png";
-            spaces[x].innerHTML = "<img src='img/regular/" + img + "'>";
-            spaces[x].innerHTML += "<span>" + (x+1 + box_current*30) + " - " + name + "</span>";    
+            let num = "000000" + (x+1 + box_current*30);
+            num = num.substr(num.length - 3)
+            spaces[x].style.backgroundImage = "url('img/regular/" + img + "')";
+            spaces[x].innerHTML = "<div class='bg'></div>"
+            spaces[x].innerHTML += "<span class='entry-name'>" + name + "</span>"
+            spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"   
         }
         else{
-            spaces[x].innerHTML = "";
+            spaces[x].innerHTML = "<div class='bg'></div>"
+            spaces[x].style.backgroundImage = "";
+
         }
     }
        
