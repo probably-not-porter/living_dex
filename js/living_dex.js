@@ -770,7 +770,7 @@ dex = {
     769: "Sandygast",
     770: "Palossand",
     771: "Pyukumuku",
-    772: "Type: Null",
+    772: "Type Null",
     773: "Silvally",
     774: "Minior",
     775: "Komala",
