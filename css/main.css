@@ -1,5 +1,21 @@
+*{
+    user-select: none;
+    -moz-user-select: none;
+}
 body{
     background-color: rgb(190, 190, 190);
+}
+.box-nav img{
+    float: left;
+    margin-top: 3px;
+    margin-left: -20px;
+}
+.box-name{
+    float: left;
+    margin-left: 20px;
+}
+.box-count{
+    float: right;
 }
 .entry{
     background-size: contain;
@@ -48,24 +64,48 @@ body{
     width: 100%;
     text-align: center;
 }
+#total{
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    font-size: 2vh;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 #top{
     border: 1px solid black;
     text-align: center;
     line-height: 100%;
+    font-size: 30px;
 }
 #box-left{
     display:inline-block;
+    float: left;
     height: 100%;
+    cursor: pointer;
+    margin-top: 2vh;
+    font-size: 10vh;
 }
 #box-right{
     display:inline-block;
+    float: right;
     height: 100%;
+    cursor: pointer;
+    margin-top: 2vh;
+    font-size: 10vh;
+}
+#box-left:hover{
+    color: gray;
+}
+#box-right:hover{
+    color: gray;
 }
 #box-title{
     display:inline-block;
     height: 100%;
     margin-left: 3vw;
-    margin-right: 3vw
+    margin-right: 3vw;
+    margin-top: 2vh;
+    font-size: 5vh;
 }
 #sidebar{
     border: 1px solid black;
@@ -86,6 +126,9 @@ body{
     padding-left: 30px;
     margin: 10px;
     cursor: pointer;
+    height: 33px;
+    width: 60%;
+    min-width: 300px;
 }
 .box-nav:hover{
     background-color: rgb(133, 133, 133);
