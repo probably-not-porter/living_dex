@@ -17,7 +17,9 @@
         <script src="js/load_save.js"></script>
         <script src="js/living_dex.js"></script>
         <script src="js/main.js"></script>
+
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mobile.css">
     </head>
     <body>
         <div class="parent">
@@ -91,7 +93,7 @@
                     <div onclick='goto_box(30)' class='box-nav'>Empty (Box 31)</div>
                     <div onclick='goto_box(31)' class='box-nav'>Empty (Box 32)</div>
                 </div>
-                <div style="padding:10px;">
+                <div id='stats' style="padding:10px;">
                     <span id='total'></span>
                     <br><br>
                         <button onclick="document.getElementById('import_file').click()">Import Save File</button>
