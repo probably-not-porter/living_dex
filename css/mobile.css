@@ -1,4 +1,4 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1110px) {
     .parent {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -10,7 +10,7 @@
         height: 30vh;
     }
     #top *{
-        font-size: 6vw;
+        font-size: 30px;
         margin-top: 0px;
         padding-top: 0px;
         height: 30px;
@@ -24,11 +24,11 @@
     #total{
         margin-top: 0px;
         width: 100%;
-        font-size: 3vw;
+        font-size: 15px;
         
     }
     .box-nav{
-        font-size: 2vw;
+        font-size: 12px;
         min-width: 52vw;
     }
     #stats{

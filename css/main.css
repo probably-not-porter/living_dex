@@ -17,35 +17,32 @@ body{
 .box-count{
     float: right;
 }
+.entry:hover span{
+    display:block;
+}
+.entry span{
+    display: none;
+}
 .entry{
     background-size: contain;
     background-repeat: no-repeat;
     image-rendering: pixelated;
     position:relative;
     max-width: 16vh;
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: pointer;
 }
 .check{
     opacity: 1;
 }
-.check .bg{
-    background-color: rgb(146, 146, 146);
+.check:hover{
 }
 .bg{
-    background-color: rgba(212, 24, 24, 0.2);
     position:absolute;
     z-index: -1;
     width: 80%;
     height: 80%;
     margin: 10%;
-    border-radius: 10px;
-}
-.bg:hover{
-    background-color: rgba(212, 24, 24, .5);
-}
-.check:hover .bg{
-    background-color: rgb(116, 116, 116);
 }
 
 .entry .entry-name{
@@ -58,7 +55,7 @@ body{
 .entry .entry-num{
     float: left;
     position:absolute;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     bottom: 10px;
     width: 100%;
@@ -73,6 +70,11 @@ body{
 }
 #top{
     border: 1px solid black;
+    background: url("../img/box/box1_top.png") #484848;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
     text-align: center;
     line-height: 100%;
     font-size: 30px;
@@ -174,7 +176,15 @@ body{
 .div30 { grid-area: 6 / 6 / 7 / 7; }
 .div31 { grid-area: 1 / 1 / 2 / 7; }
 .div32 { grid-area: 1 / 7 / 7 / 8; }
-
+#boxbg { 
+    grid-area: 2 / 1 / 7 / 7; 
+    background-color: red;
+    background: url("../img/box/box1.png") #484848;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+}
 .active{
     background-color: rgb(56, 56, 56);
 }
