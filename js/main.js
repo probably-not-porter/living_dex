@@ -55,7 +55,10 @@ function populate_living_dex(){
         count = count + 1;
     }
 }
-
+function reset_boxes(){
+    reset(); // in load_save.js
+    render_box(box_current);
+}
 function render_box(n){
     console.warn("Render Page " + n);
     // Update DEX TOTAL

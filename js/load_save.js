@@ -10,6 +10,11 @@ function write(){
     console.info("Saved Dex to local storage.");
 }
 
+function reset(){ // RESET cache only
+    localStorage.setItem("dex_progress", JSON.stringify([]));
+    read();
+}
+
 function write_file() {
     const a = document.createElement('a');
     const file = new Blob([dex_progress], {type: 'text/plain'});
