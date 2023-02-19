@@ -1,5 +1,8 @@
-boxes = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
-box_names = [
+//SETTINGS
+const pkmn_per_box = 30;
+const num_boxes = 34;
+const boxes = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+const box_names = [
     "National Dex 001-030", 
     "National Dex 031-060", 
     "National Dex 061-090", 
@@ -35,9 +38,10 @@ box_names = [
     "National Dex 961-990",
     "National Dex 991-1008",
 ]
-box_current = 0;
-var dex_progress = [];
 
+// VARS
+var box_current = 0;
+var dex_progress = [];
 function populate_living_dex(){
     count = 0;
     target_box = 0
@@ -69,14 +73,25 @@ function render_box(n){
             if (dex_progress.includes(y)){
                 count += 1;
             }
-        }        
-        navs[x].innerHTML = "<img src='img/great.png'> <span class='box-name'>" + box_names[x] + "</span><span class='box-count'>" + " (" + count + "/30)</span>";
+        }       
+        if (count < 11){
+            navs[x].innerHTML = "<img src='img/balls/poke.png'> <span class='box-name'>" + box_names[x] + "</span><span class='box-count'>" + " (" + count + "/30)</span>";
+        } 
+        else if (count < 21){
+            navs[x].innerHTML = "<img src='img/balls/great.png'> <span class='box-name'>" + box_names[x] + "</span><span class='box-count'>" + " (" + count + "/30)</span>";
+        }
+        else if (count < 30){
+            navs[x].innerHTML = "<img src='img/balls/ultra.png'> <span class='box-name'>" + box_names[x] + "</span><span class='box-count'>" + " (" + count + "/30)</span>";
+        }
+        else{
+            navs[x].innerHTML = "<img src='img/balls/master.png'> <span class='box-name'>" + box_names[x] + "</span><span class='box-count'>" + " (" + count + "/30)</span>";
+        }
     }
     navs[n].classList.add('active'); // one of them is active
     document.getElementById("box-title").innerHTML = box_names[n]; // title current box
 
     // Render box pkmn
-    for (x = 0; x < 30; x++){
+    for (x = 0; x < pkmn_per_box; x++){
         if (x < data.length){
             let name = dex[data[x]];
             let num = "000000" + (x+1 + box_current*30);
@@ -88,8 +103,8 @@ function render_box(n){
             spaces[x].innerHTML = "<div class='bg'></div>"
             spaces[x].innerHTML += "<span class='entry-name'>" + name + "</span>"
             spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"  
-            spaces[x].setAttribute("onclick", "toggle_pkmn(" + (x+1 + box_current*30) + ")"); 
-            if (dex_progress.includes((x+1 + box_current*30))){
+            spaces[x].setAttribute("onclick", "toggle_pkmn(" + (x+1 + box_current*pkmn_per_box) + ")"); 
+            if (dex_progress.includes((x+1 + box_current*pkmn_per_box))){
                 spaces[x].classList.add('check');
             }else{
                 spaces[x].classList.remove('check');
@@ -119,12 +134,12 @@ function goto_box(n){
 }
 function box_left(){
     box_current = box_current - 1 
-    if (box_current == -1) {box_current = 31}
+    if (box_current == -1) {box_current = num_boxes - 1}
     render_box(box_current);
 }
 function box_right(){
     box_current = box_current + 1 
-    if (box_current == 32) {box_current = 0}
+    if (box_current == num_boxes) {box_current = 0}
     render_box(box_current);
 }
 

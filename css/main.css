@@ -1,14 +1,14 @@
 *{
-    user-select: none;
     -moz-user-select: none;
+    user-select: none;
 }
 body{
     background-color: rgb(190, 190, 190);
 }
 .box-nav img{
     float: left;
-    margin-top: 3px;
-    margin-left: -20px;
+    margin-top: -4px;
+    margin-left: -30px;
 }
 .box-name{
     float: left;
@@ -26,7 +26,6 @@ body{
 .entry{
     background-size: contain;
     background-repeat: no-repeat;
-    image-rendering: pixelated;
     position:relative;
     max-width: 16vh;
     opacity: 0.3;
@@ -51,12 +50,14 @@ body{
     bottom: 2px;
     width: 100%;
     text-align: center;
+    color: white;
 }
 .entry .entry-num{
     float: left;
     position:absolute;
     color: rgb(255, 255, 255);
     font-size: 30px;
+    font-weight: 700;
     bottom: 10px;
     width: 100%;
     text-align: center;
