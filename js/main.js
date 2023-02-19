@@ -29,9 +29,11 @@ box_names = [
     "National Dex 781-810", 
     "National Dex 811-840", 
     "National Dex 841-870", 
-    "National Dex 871-898",
-    "Empty (Box 31)", 
-    "Empty (Box 32)"
+    "National Dex 871-900",
+    "National Dex 901-930",
+    "National Dex 931-960",
+    "National Dex 961-990",
+    "National Dex 991-1008",
 ]
 box_current = 0;
 var dex_progress = [];
@@ -77,10 +79,12 @@ function render_box(n){
     for (x = 0; x < 30; x++){
         if (x < data.length){
             let name = dex[data[x]];
-            let img = name.toLowerCase().replace("'",'') + ".png";
             let num = "000000" + (x+1 + box_current*30);
+            let img = ("000000" + num + ".png")
+            img = img.slice(img.length - 8, img.length);
+            
             num = num.substr(num.length - 3)
-            spaces[x].style.backgroundImage = "url('img/regular/" + img + "')";
+            spaces[x].style.backgroundImage = "url('img/sprites/" + img + "')";
             spaces[x].innerHTML = "<div class='bg'></div>"
             spaces[x].innerHTML += "<span class='entry-name'>" + name + "</span>"
             spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"  

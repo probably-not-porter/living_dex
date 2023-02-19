@@ -896,5 +896,9 @@ dex = {
     895: "Regidrago",
     896: "Glastrier",
     897: "Spectrier",
-    898: "Calyrex"
+    898: "Calyrex",
+    899: "Wyrdeer",
+    900: "Kleavor",
+    901: "Ursaluna",
+    902: "Basculegion"
 }
