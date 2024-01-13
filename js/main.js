@@ -1,7 +1,7 @@
 //SETTINGS
 const pkmn_per_box = 30;
-const num_boxes = 34;
-const boxes = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+const num_boxes = 36;
+const boxes = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 const box_names = [
     "National Dex 001-030", 
     "National Dex 031-060", 
@@ -36,7 +36,8 @@ const box_names = [
     "National Dex 901-930",
     "National Dex 931-960",
     "National Dex 961-990",
-    "National Dex 991-1008",
+    "National Dex 991-1020",
+    "National Dex 1021-1050"
 ]
 
 // VARS
@@ -97,12 +98,13 @@ function render_box(n){
     for (x = 0; x < pkmn_per_box; x++){
         if (x < data.length){
             let name = dex[data[x]];
-            let num = "000000" + (x+1 + box_current*30);
-            let img = ("000000" + num + ".png")
-            img = img.slice(img.length - 8, img.length);
+            let num = x+1 + box_current*30;
+            // let num = "000000" + (x+1 + box_current*30);
+            let img = (num + ".png")
+            //img = img.slice(img.length - 8, img.length);
             
-            num = num.substr(num.length - 3)
-            spaces[x].style.backgroundImage = "url('img/sprites/" + img + "')";
+            //num = num.substr(num.length - 3)
+            spaces[x].style.backgroundImage = "url('img/sprites-new/" + img + "')";
             spaces[x].innerHTML = "<div class='bg'></div>"
             spaces[x].innerHTML += "<span class='entry-name'>" + name + "</span>"
             spaces[x].innerHTML += "<span class='entry-num'>" + num + "</span>"  
