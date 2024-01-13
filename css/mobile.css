@@ -9,11 +9,8 @@
     #sidebar{
         height: 30vh;
     }
-    #top *{
-        font-size: 30px;
-        margin-top: 0px;
-        padding-top: 0px;
-        height: 30px;
+    #box-title{
+        font-size: 3vw;
     }
     #box-nav-parent{
         overflow-y: scroll;

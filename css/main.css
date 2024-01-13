@@ -78,23 +78,35 @@ body{
     image-rendering: pixelated;
     text-align: center;
     line-height: 100%;
-    font-size: 30px;
+}
+#top *{
+    font-size: 2vw;
+    margin-top: 0px;
+    padding-top: 0px;
+    height: 30px;
+    vertical-align: top;
 }
 #box-left{
-    display:inline-block;
-    float: left;
+    display: inline-block;
     height: 100%;
+    width: 100px;
     cursor: pointer;
-    margin-top: 2vh;
-    font-size: 10vh;
+    background: url("../img/box/arrow_left.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
 }
 #box-right{
-    display:inline-block;
-    float: right;
+    display: inline-block;
     height: 100%;
+    width: 100px;
     cursor: pointer;
-    margin-top: 2vh;
-    font-size: 10vh;
+    background: url("../img/box/arrow_right.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
 }
 #box-left:hover{
     color: gray;
@@ -104,11 +116,13 @@ body{
 }
 #box-title{
     display:inline-block;
-    height: 100%;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    margin-top: 2vh;
-    font-size: 5vh;
+    height: 30px;
+    margin-top: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 1vh;
+    font-size: 2vw;
+    line-height: 30px;
 }
 #sidebar{
     border: 1px solid black;
